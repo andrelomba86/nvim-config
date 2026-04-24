@@ -1,0 +1,14 @@
+{
+	"javascript": {
+		"formatter": {
+			"insertSpaces": true,
+			"tabSize": 2,
+			"trimTrailingWhitespace": true
+		}
+	},
+	"json": {
+		"formatter": {
+		"enabled": true
+		}
+	}
+}

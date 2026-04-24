@@ -1,0 +1,12 @@
+{
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"lineWidth": 110,
+			"trailingCommas": "es5",
+			"semicolons": "asNeeded",
+			"arrowParentheses": "asNeeded",
+			"bracketSameLine": true
+		}
+	}
+}

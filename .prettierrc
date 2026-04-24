@@ -1,0 +1,10 @@
+/usr/local/lib/node_modules/prettier/bin
+{
+  "arrowParens": "avoid",
+  "semi": false,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "tabWidth": 2,
+  "printWidth": 110,
+  "COMMENTED_trailingComma": "es5"
+}
