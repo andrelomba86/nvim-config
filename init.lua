@@ -89,3 +89,24 @@ vim.api.nvim_create_autocmd(
 )
 
 require("config.bufferline")
+
+-- Disable Caps Lock when exiting insert mode
+vim.api.nvim_create_autocmd(
+    {"InsertLeave", "InsertChange", "ModeChanged"},
+    {
+        callback = function(event)
+            -- Only process if we're leaving insert mode
+            local current_mode = vim.fn.mode()
+            if current_mode ~= "i" and current_mode ~= "I" and current_mode ~= "R" then
+                -- Check if Caps Lock is on, and toggle it off
+                local handle = io.popen("xset -q 2>/dev/null | grep 'Caps Lock' | grep -o 'on'")
+                local result = handle:read("*a")
+                handle:close()
+                
+                if result:match("on") then
+                    os.execute("xdotool key Caps_Lock 2>/dev/null")
+                end
+            end
+        end
+    }
+)
