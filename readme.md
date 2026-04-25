@@ -92,6 +92,7 @@ Comportamento adicional:
 | n | `<leader>fg` | Buscar texto no projeto (live grep) |
 | n | `<leader>fb` | Buscar buffers abertos |
 | n | `<leader>fc` | Command palette (comandos do Neovim) |
+| n | `<leader>fh` | Buscar ajuda/documentacao do Neovim |
 | n | `<leader>fk` | Buscar atalhos (keymaps) |
 | n | `<leader>fs` | Buscar simbolos no arquivo atual |
 | n | `<leader>fS` | Buscar simbolos no workspace |
