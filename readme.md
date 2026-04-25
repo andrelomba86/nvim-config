@@ -13,6 +13,7 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 ## Comportamentos adicionados
 
 - Clipboard integrado ao sistema (`unnamedplus`) para copiar e colar entre Neovim e outros aplicativos.
+- Em arquivos JS/TS, `gf` resolve imports com alias `@/` para `src/` (ex.: `@/validators/progressao`) e abre o arquivo correspondente.
 
 ## GitHub Copilot (arquivo: `lua/config/copilot.lua`)
 
