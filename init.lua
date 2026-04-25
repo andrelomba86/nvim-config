@@ -1,8 +1,9 @@
 require("biome")
 require("config.lazy")
-require("config.cocvim")
 require("config.nvimtree")
 require("config.noice")
+require("config.lsp")
+require("config.cmp")
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath
@@ -79,11 +80,11 @@ vim.api.nvim_create_autocmd(
     }
 )
 
--- Autoformat on save with Neoformat
+-- Autoformat on save only for web-related filetypes
 vim.api.nvim_create_autocmd(
     "BufWritePre",
     {
-        pattern = "*",
+        pattern = {"*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.css"},
         command = "Neoformat"
     }
 )

@@ -1,4 +1,10 @@
 {
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single",
@@ -7,6 +13,16 @@
 			"semicolons": "asNeeded",
 			"arrowParentheses": "asNeeded",
 			"bracketSameLine": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
 		}
 	}
 }

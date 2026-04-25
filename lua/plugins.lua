@@ -4,7 +4,6 @@ return {
     {"itchyny/lightline.vim"},
     {"tpope/vim-surround"}, -- replace 'surround closing parens: ysi3w[  ds[
     {"itmammoth/doorboy.vim"}, -- highlight brackets
-    {"neoclide/coc.nvim", branch = "release"}, -- autocomplete
     -- { "pangloss/vim-javascript" },                 -- javascript
     -- { "leafgarland/typescript-vim" },             -- typescript
     -- { "maxmellon/vim-jsx-pretty" },
@@ -19,6 +18,31 @@ return {
         dependencies = {"nvim-tree/nvim-web-devicons"}
     },
     {"sbdchd/neoformat"}, -- code auto formatting (Prettier)
+    {"neovim/nvim-lspconfig"},
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = {"williamboman/mason.nvim", "neovim/nvim-lspconfig"}
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+            "rafamadriz/friendly-snippets"
+        }
+    },
+    {
+        "folke/trouble.nvim",
+        dependencies = {"nvim-tree/nvim-web-devicons"},
+        opts = {}
+    },
     {
         "doctorfree/cheatsheet.nvim",
         event = "VeryLazy",
