@@ -24,7 +24,10 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | n | `[d` | Ir para diagnostico anterior |
 | n | `]d` | Ir para proximo diagnostico |
 | n | `<leader>q` | Enviar diagnosticos para loclist |
-| n | `<leader>xx` | Abrir/fechar painel de diagnosticos (Trouble) |
+| n | `<leader>xx` | Abrir/fechar diagnosticos do workspace |
+| n | `<leader>xX` | Abrir/fechar diagnosticos do buffer atual |
+| n | `<leader>xq` | Abrir/fechar quickfix no Trouble |
+| n | `<leader>xl` | Abrir/fechar loclist no Trouble |
 
 ## Completion e snippets (arquivo: `lua/config/cmp.lua`)
 
