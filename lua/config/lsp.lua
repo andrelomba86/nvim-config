@@ -53,6 +53,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, opts)
 
     local function code_action_with_feedback(action_opts, done_delay_ms)
         local timeout_ms = action_opts.timeout_ms or 1200

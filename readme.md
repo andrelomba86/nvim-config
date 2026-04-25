@@ -21,6 +21,8 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | n | `gd` | Ir para definicao |
 | n | `gr` | Listar referencias |
 | n | `K` | Hover/documentacao |
+| n | `<F2>` | Rename do simbolo |
+| n | `<F12>` | Ir para definicao |
 | n | `<leader>rn` | Rename do simbolo |
 | n | `<leader>f` | Formatar arquivo (LSP primeiro, fallback para Neoformat) |
 | n | `<leader>ca` | Code actions (modo rapido, com timeout curto e filtro para TS/JS) |
@@ -80,6 +82,7 @@ Comportamento adicional:
 
 | Modo | Atalho | Acao |
 | --- | --- | --- |
+| n | `<C-b>` | Alternar explorer (sidebar) |
 | n | `<leader>e` | Abrir explorer focando no arquivo atual (ou fechar se ja estiver aberto) |
 | n | `<leader><leader>f` | Revelar arquivo atual na tree |
 
