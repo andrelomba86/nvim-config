@@ -72,6 +72,46 @@ local on_attach = function(_, bufnr)
         end, timeout_ms + 50)
     end
 
+    local function should_keep_action(ft, action)
+        if not ts_filetypes[ft] then
+            return true
+        end
+
+        local kind = action.kind or ""
+        local title = string.lower(action.title or "")
+
+        if kind:match("^refactor%.move") then
+            return false
+        end
+
+        if title:match("move to new file") or title:match("move to a new file") then
+            return false
+        end
+
+        return true
+    end
+
+    local function make_code_action_filter(ft, allowed_kinds)
+        return function(action)
+            if not should_keep_action(ft, action) then
+                return false
+            end
+
+            if not allowed_kinds or #allowed_kinds == 0 then
+                return true
+            end
+
+            local kind = action.kind or ""
+            for _, prefix in ipairs(allowed_kinds) do
+                if kind:match("^" .. prefix) then
+                    return true
+                end
+            end
+
+            return false
+        end
+    end
+
     vim.keymap.set("n", "<leader>rn", function()
         local new_name = vim.fn.input("Rename to: ", vim.fn.expand("<cword>"))
         if new_name == nil or new_name == "" then
@@ -88,24 +128,7 @@ local on_attach = function(_, bufnr)
             context = {
                 diagnostics = vim.diagnostic.get(bufnr, {lnum = lnum})
             },
-            filter = function(action)
-                if not ts_filetypes[ft] then
-                    return true
-                end
-
-                local kind = action.kind or ""
-                local title = string.lower(action.title or "")
-
-                if kind:match("^refactor%.move") then
-                    return false
-                end
-
-                if title:match("move to new file") or title:match("move to a new file") then
-                    return false
-                end
-
-                return true
-            end
+            filter = make_code_action_filter(ft)
         })
     end, opts)
 
@@ -114,25 +137,36 @@ local on_attach = function(_, bufnr)
         local ft = vim.bo[bufnr].filetype
         code_action_with_feedback({
             timeout_ms = 5000,
-            filter = function(action)
-                if not ts_filetypes[ft] then
-                    return true
-                end
-
-                local kind = action.kind or ""
-                local title = string.lower(action.title or "")
-
-                if kind:match("^refactor%.move") then
-                    return false
-                end
-
-                if title:match("move to new file") or title:match("move to a new file") then
-                    return false
-                end
-
-                return true
-            end
+            filter = make_code_action_filter(ft)
         }, 1000)
+    end, opts)
+
+    vim.keymap.set("n", "<leader>cf", function()
+        local ft = vim.bo[bufnr].filetype
+        local lnum = vim.api.nvim_win_get_cursor(0)[1] - 1
+        code_action_with_feedback({
+            timeout_ms = 1200,
+            context = {
+                diagnostics = vim.diagnostic.get(bufnr, {lnum = lnum})
+            },
+            filter = make_code_action_filter(ft, {"quickfix"})
+        })
+    end, opts)
+
+    vim.keymap.set("n", "<leader>cr", function()
+        local ft = vim.bo[bufnr].filetype
+        code_action_with_feedback({
+            timeout_ms = 1800,
+            filter = make_code_action_filter(ft, {"refactor"})
+        })
+    end, opts)
+
+    vim.keymap.set("n", "<leader>cs", function()
+        local ft = vim.bo[bufnr].filetype
+        code_action_with_feedback({
+            timeout_ms = 1800,
+            filter = make_code_action_filter(ft, {"source"})
+        })
     end, opts)
 
     vim.keymap.set("n", "<leader>oi", function()

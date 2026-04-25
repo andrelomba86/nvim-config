@@ -20,6 +20,9 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | n | `<leader>rn` | Rename do simbolo |
 | n | `<leader>ca` | Code actions (modo rapido, com timeout curto e filtro para TS/JS) |
 | n | `<leader>cA` | Code actions completas (timeout maior) |
+| n | `<leader>cf` | Apenas quickfix code actions |
+| n | `<leader>cr` | Apenas refactors |
+| n | `<leader>cs` | Apenas source actions |
 | n | `<leader>oi` | Organize imports |
 | n | `[d` | Ir para diagnostico anterior |
 | n | `]d` | Ir para proximo diagnostico |
