@@ -59,6 +59,7 @@ Comportamento adicional:
 | --- | --- | --- |
 | n | `<C-l>` | Proximo buffer |
 | n | `<C-h>` | Buffer anterior |
+| n | `<leader>w` | Fechar buffer/aba atual |
 
 ## Comentarios (arquivo: `lua/config/comment.lua`)
 
