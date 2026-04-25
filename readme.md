@@ -46,8 +46,12 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 
 | Modo | Atalho | Acao |
 | --- | --- | --- |
-| n | `<leader>e` | Focar/fechar NvimTree |
+| n | `<leader>e` | Abrir explorer focando no arquivo atual (ou fechar se ja estiver aberto) |
 | n | `<leader><leader>f` | Revelar arquivo atual na tree |
+
+Comportamento adicional:
+
+- Explorer sincroniza automaticamente o arquivo em foco (estilo VS Code).
 
 ## Busca e navegacao de workspace (arquivo: `lua/config/telescope.lua`)
 

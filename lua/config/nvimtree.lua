@@ -6,6 +6,11 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 require("nvim-tree").setup(
     {
+        update_focused_file = {
+            enable = true,
+            update_root = false,
+            ignore_list = {}
+        },
         renderer = {
             group_empty = true,
             icons = {
@@ -38,13 +43,15 @@ require("nvim-tree").setup(
 -- NvimTree key mappings
 vim.keymap.set("n", "<leader>e", function()
     local nvimtree_api = require("nvim-tree.api")
-    local current_buf = vim.fn.bufname("%")
-    
+
     -- Verifica se está em um buffer da nvim-tree
     if vim.bo.filetype == "NvimTree" then
         nvimtree_api.tree.close()
     else
-        nvimtree_api.tree.focus()
+        nvimtree_api.tree.find_file({
+            open = true,
+            focus = true
+        })
     end
 end, {silent = true, noremap = true})
 vim.keymap.set("n", "<leader><leader>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true})
