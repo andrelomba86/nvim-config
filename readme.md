@@ -41,6 +41,10 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | i, s | `<Tab>` | Proximo item no completion ou avancar snippet |
 | i, s | `<S-Tab>` | Item anterior no completion ou voltar snippet |
 
+Comportamento adicional:
+
+- Completion com bordas, janela de documentacao e ghost text para ficar mais proximo do VS Code.
+
 ## Navegacao de buffers (arquivo: `lua/config/bufferline.lua`)
 
 | Modo | Atalho | Acao |
