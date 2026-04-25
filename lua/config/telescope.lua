@@ -21,5 +21,6 @@ telescope.setup({
 vim.keymap.set("n", "<leader>p", builtin.find_files, {silent = true, desc = "Find files"})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {silent = true, desc = "Find in files"})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {silent = true, desc = "Find buffers"})
+vim.keymap.set("n", "<leader>fc", builtin.commands, {silent = true, desc = "Command palette"})
 vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {silent = true, desc = "Document symbols"})
 vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, {silent = true, desc = "Workspace symbols"})
