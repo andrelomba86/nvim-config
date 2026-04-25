@@ -50,6 +50,13 @@ return {
         opts = {}
     },
     {
+        "folke/which-key.nvim",
+        event = "VimEnter",
+        config = function()
+            require("config.whichkey")
+        end
+    },
+    {
         "doctorfree/cheatsheet.nvim",
         event = "VeryLazy",
         dependencies = {

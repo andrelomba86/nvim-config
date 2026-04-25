@@ -31,5 +31,6 @@
   "vim-move": { "branch": "master", "commit": "267fd1cff61fc643dfb5f9b188c434906f5214aa" },
   "vim-sensible": { "branch": "master", "commit": "0ce2d843d6f588bb0c8c7eec6449171615dc56d9" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
-  "vimcaps": { "branch": "master", "commit": "9359deafdc0cc0fd016e6e37491c6197a93c21bd" }
+  "vimcaps": { "branch": "master", "commit": "9359deafdc0cc0fd016e6e37491c6197a93c21bd" },
+  "which-key.nvim": { "branch": "main", "commit": "3aab2147e74890957785941f0c1ad87d0a44c15a" }
 }

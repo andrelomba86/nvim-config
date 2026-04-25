@@ -85,3 +85,8 @@ Comportamento adicional:
 | n | `<leader>fb` | Buscar buffers abertos |
 | n | `<leader>fs` | Buscar simbolos no arquivo atual |
 | n | `<leader>fS` | Buscar simbolos no workspace |
+
+## Discoverability (arquivo: `lua/config/whichkey.lua`)
+
+- `which-key` habilitado para mostrar painel de atalhos ao usar `<leader>`.
+- Grupos configurados: Code, Find/Format, Git Hunks, Diagnostics e Explorer.
