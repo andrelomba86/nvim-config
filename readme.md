@@ -44,6 +44,7 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 Comportamento adicional:
 
 - Completion com bordas, janela de documentacao e ghost text para ficar mais proximo do VS Code.
+- Autopairs integrado ao completion: ao confirmar sugestoes de funcoes/metodos, parenteses sao inseridos automaticamente.
 
 ## Navegacao de buffers (arquivo: `lua/config/bufferline.lua`)
 
