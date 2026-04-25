@@ -95,6 +95,7 @@ Comportamento adicional:
 | n | `<leader>fd` | Buscar diagnosticos do workspace |
 | n | `<leader>fh` | Buscar ajuda/documentacao do Neovim |
 | n | `<leader>fk` | Buscar atalhos (keymaps) |
+| n | `<leader>frg` | Buscar registers |
 | n | `<leader>fs` | Buscar simbolos no arquivo atual |
 | n | `<leader>fS` | Buscar simbolos no workspace |
 | n | `<leader>ft` | Buscar TODO/FIXME no workspace |
