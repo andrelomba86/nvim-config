@@ -18,6 +18,7 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | n | `gr` | Listar referencias |
 | n | `K` | Hover/documentacao |
 | n | `<leader>rn` | Rename do simbolo |
+| n | `<leader>f` | Formatar arquivo (LSP primeiro, fallback para Neoformat) |
 | n | `<leader>ca` | Code actions (modo rapido, com timeout curto e filtro para TS/JS) |
 | n | `<leader>cA` | Code actions completas (timeout maior) |
 | n | `<leader>cf` | Apenas quickfix code actions |

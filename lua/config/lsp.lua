@@ -72,6 +72,34 @@ local on_attach = function(_, bufnr)
         end, timeout_ms + 50)
     end
 
+    local function format_buffer_with_fallback()
+        local clients = vim.lsp.get_clients({bufnr = bufnr})
+        local has_lsp_formatter = false
+
+        for _, client in ipairs(clients) do
+            if client and client.supports_method and client.supports_method("textDocument/formatting") then
+                has_lsp_formatter = true
+                break
+            end
+        end
+
+        if has_lsp_formatter then
+            vim.lsp.buf.format({
+                async = true,
+                timeout_ms = 3000,
+                bufnr = bufnr
+            })
+            return
+        end
+
+        if vim.fn.exists(":Neoformat") == 2 then
+            vim.cmd("silent Neoformat")
+            return
+        end
+
+        vim.notify("Nenhum formatter disponivel para este buffer.", vim.log.levels.WARN, {title = "Format"})
+    end
+
     local function should_keep_action(ft, action)
         if not ts_filetypes[ft] then
             return true
@@ -119,6 +147,8 @@ local on_attach = function(_, bufnr)
         end
         vim.lsp.buf.rename(new_name)
     end, opts)
+
+    vim.keymap.set("n", "<leader>f", format_buffer_with_fallback, opts)
 
     vim.keymap.set("n", "<leader>ca", function()
         local ft = vim.bo[bufnr].filetype
