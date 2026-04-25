@@ -85,15 +85,24 @@ Comportamento adicional:
 
 ## Busca e navegacao de workspace (arquivo: `lua/config/telescope.lua`)
 
+Dentro dos pickers do Telescope:
+
+- `<C-j>` seleciona o proximo item
+- `<C-k>` seleciona o item anterior
+
 | Modo | Atalho | Acao |
 | --- | --- | --- |
 | n | `<leader>p` | Buscar arquivos no projeto |
 | n | `<leader>f.` | Reabrir o ultimo picker do Telescope |
+| n | `<leader>ff` | Buscar no buffer atual |
 | n | `<leader>fr` | Buscar arquivos recentes |
+| n | `<leader>fj` | Buscar na jumplist |
+| n | `<leader>fm` | Buscar marks |
 | n | `<leader>fg` | Buscar texto no projeto (live grep) |
 | n | `<leader>fw` | Buscar a palavra atual no projeto |
 | n | `<leader>fb` | Buscar buffers abertos |
 | n | `<leader>fc` | Command palette (comandos do Neovim) |
+| n | `<leader>fC` | Historico de comandos |
 | n | `<leader>fd` | Buscar diagnosticos do workspace |
 | n | `<leader>fh` | Buscar ajuda/documentacao do Neovim |
 | n | `<leader>fk` | Buscar atalhos (keymaps) |
@@ -101,6 +110,10 @@ Comportamento adicional:
 | n | `<leader>fs` | Buscar simbolos no arquivo atual |
 | n | `<leader>fS` | Buscar simbolos no workspace |
 | n | `<leader>ft` | Buscar TODO/FIXME no workspace |
+| n | `<leader>gf` | Buscar arquivos versionados pelo Git |
+| n | `<leader>gs` | Buscar mudancas do Git |
+| n | `<leader>gb` | Buscar branches do Git |
+| n | `<leader>gc` | Buscar commits do Git |
 
 ## TODOs no codigo (arquivo: `lua/config/todo_comments.lua`)
 
@@ -113,4 +126,4 @@ Comportamento adicional:
 ## Discoverability (arquivo: `lua/config/whichkey.lua`)
 
 - `which-key` habilitado para mostrar painel de atalhos ao usar `<leader>`.
-- Grupos configurados: Code, Find/Format, Git Hunks, Diagnostics e Explorer.
+- Grupos configurados: Code, Find/Format, Git, Git Hunks, Diagnostics e Explorer.
