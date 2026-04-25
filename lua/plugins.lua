@@ -70,6 +70,14 @@ return {
         end
     },
     {
+        "github/copilot.vim",
+        event = "VimEnter",
+        cmd = {"Copilot"},
+        config = function()
+            require("config.copilot")
+        end
+    },
+    {
         "doctorfree/cheatsheet.nvim",
         event = "VeryLazy",
         dependencies = {

@@ -9,6 +9,7 @@ which_key.setup({
 })
 
 which_key.add({
+    {"<leader>a", group = "AI"},
     {"<leader>c", group = "Code"},
     {"<leader>f", group = "Find"},
     {"<leader>g", group = "Git"},

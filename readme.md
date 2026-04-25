@@ -14,6 +14,17 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 
 - Clipboard integrado ao sistema (`unnamedplus`) para copiar e colar entre Neovim e outros aplicativos.
 
+## GitHub Copilot (arquivo: `lua/config/copilot.lua`)
+
+| Modo | Atalho | Acao |
+| --- | --- | --- |
+| i | `<C-y>` | Aceitar sugestao do Copilot |
+| i | `<C-e>` | Descartar sugestao atual |
+| i | `<M-]>` | Proxima sugestao |
+| i | `<M-[>` | Sugestao anterior |
+| n | `<leader>ae` | Habilitar Copilot |
+| n | `<leader>ad` | Desabilitar Copilot |
+
 ## LSP (arquivo: `lua/config/lsp.lua`)
 
 | Modo | Atalho | Acao |
@@ -134,4 +145,4 @@ Dentro dos pickers do Telescope:
 ## Discoverability (arquivo: `lua/config/whichkey.lua`)
 
 - `which-key` habilitado para mostrar painel de atalhos ao usar `<leader>`.
-- Grupos configurados: Code, Find, Git, Git Hunks, LSP, Diagnostics e Explorer.
+- Grupos configurados: AI, Code, Find, Git, Git Hunks, LSP, Diagnostics e Explorer.
