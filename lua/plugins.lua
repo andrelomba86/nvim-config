@@ -3,6 +3,12 @@ return {
     {"WolfgangMehner/bash-support"},
     {"itchyny/lightline.vim"},
     {"tpope/vim-surround"}, -- replace 'surround closing parens: ysi3w[  ds[
+    {
+        "numToStr/Comment.nvim",
+        config = function()
+            require("config.comment")
+        end
+    },
     {"itmammoth/doorboy.vim"}, -- highlight brackets
     -- { "pangloss/vim-javascript" },                 -- javascript
     -- { "leafgarland/typescript-vim" },             -- typescript

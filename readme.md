@@ -54,6 +54,13 @@ Comportamento adicional:
 | n | `<C-l>` | Proximo buffer |
 | n | `<C-h>` | Buffer anterior |
 
+## Comentarios (arquivo: `lua/config/comment.lua`)
+
+| Modo | Atalho | Acao |
+| --- | --- | --- |
+| n, x | `<C-_>` | Alternar comentario (estilo Ctrl+/) |
+| n, x | `<leader>/` | Alternar comentario (fallback de terminal) |
+
 ## Git (arquivo: `lua/config/gitsigns.lua`)
 
 | Modo | Atalho | Acao |
