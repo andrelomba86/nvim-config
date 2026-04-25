@@ -92,6 +92,15 @@ Comportamento adicional:
 | n | `<leader>fb` | Buscar buffers abertos |
 | n | `<leader>fs` | Buscar simbolos no arquivo atual |
 | n | `<leader>fS` | Buscar simbolos no workspace |
+| n | `<leader>ft` | Buscar TODO/FIXME no workspace |
+
+## TODOs no codigo (arquivo: `lua/config/todo_comments.lua`)
+
+| Modo | Atalho | Acao |
+| --- | --- | --- |
+| n | `]t` | Ir para proximo TODO/FIXME |
+| n | `[t` | Ir para TODO/FIXME anterior |
+| n | `<leader>xt` | Abrir painel de TODOs no Trouble |
 
 ## Discoverability (arquivo: `lua/config/whichkey.lua`)
 
