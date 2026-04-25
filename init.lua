@@ -4,6 +4,7 @@ require("config.nvimtree")
 require("config.noice")
 require("config.lsp")
 require("config.cmp")
+require("config.telescope")
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath

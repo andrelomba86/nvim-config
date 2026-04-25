@@ -48,3 +48,13 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | --- | --- | --- |
 | n | `<leader>e` | Focar/fechar NvimTree |
 | n | `<leader><leader>f` | Revelar arquivo atual na tree |
+
+## Busca e navegacao de workspace (arquivo: `lua/config/telescope.lua`)
+
+| Modo | Atalho | Acao |
+| --- | --- | --- |
+| n | `<leader>p` | Buscar arquivos no projeto |
+| n | `<leader>fg` | Buscar texto no projeto (live grep) |
+| n | `<leader>fb` | Buscar buffers abertos |
+| n | `<leader>fs` | Buscar simbolos no arquivo atual |
+| n | `<leader>fS` | Buscar simbolos no workspace |
