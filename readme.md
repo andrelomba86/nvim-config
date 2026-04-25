@@ -10,6 +10,10 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
   - `i` = insert
   - `s` = select (snippets)
 
+## Comportamentos adicionados
+
+- Clipboard integrado ao sistema (`unnamedplus`) para copiar e colar entre Neovim e outros aplicativos.
+
 ## LSP (arquivo: `lua/config/lsp.lua`)
 
 | Modo | Atalho | Acao |

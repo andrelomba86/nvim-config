@@ -26,6 +26,9 @@ vim.opt.autoindent = true
 vim.opt.mouse = "a"
 vim.opt.mousemoveevent = true
 
+-- Use the system clipboard for copy and paste
+vim.opt.clipboard = "unnamedplus"
+
 -- Use bash as the default shell
 vim.opt.shell = "/usr/bin/bash"
 
