@@ -22,6 +22,7 @@ vim.keymap.set("n", "<leader>p", builtin.find_files, {silent = true, desc = "Fin
 vim.keymap.set("n", "<leader>f.", builtin.resume, {silent = true, desc = "Resume last picker"})
 vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {silent = true, desc = "Recent files"})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {silent = true, desc = "Find in files"})
+vim.keymap.set("n", "<leader>fw", builtin.grep_string, {silent = true, desc = "Find current word"})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {silent = true, desc = "Find buffers"})
 vim.keymap.set("n", "<leader>fc", builtin.commands, {silent = true, desc = "Command palette"})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {silent = true, desc = "Find help"})

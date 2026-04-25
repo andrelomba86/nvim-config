@@ -91,6 +91,7 @@ Comportamento adicional:
 | n | `<leader>f.` | Reabrir o ultimo picker do Telescope |
 | n | `<leader>fr` | Buscar arquivos recentes |
 | n | `<leader>fg` | Buscar texto no projeto (live grep) |
+| n | `<leader>fw` | Buscar a palavra atual no projeto |
 | n | `<leader>fb` | Buscar buffers abertos |
 | n | `<leader>fc` | Command palette (comandos do Neovim) |
 | n | `<leader>fd` | Buscar diagnosticos do workspace |
