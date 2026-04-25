@@ -53,6 +53,6 @@ vim.keymap.set("n", "<leader>e", function()
             focus = true
         })
     end
-end, {silent = true, noremap = true})
-vim.keymap.set("n", "<leader><leader>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true})
-vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true, noremap = true})
+end, {silent = true, noremap = true, desc = "Abrir explorer"})
+vim.keymap.set("n", "<leader><leader>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true, desc = "Revelar arquivo"})
+vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true, noremap = true, desc = "Alternar sidebar"})

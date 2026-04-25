@@ -50,11 +50,11 @@ local on_attach = function(_, bufnr)
         javascriptreact = true
     }
 
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = bufnr, silent = true, desc = "Ir para definicao"})
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, {buffer = bufnr, silent = true, desc = "Listar referencias"})
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, {buffer = bufnr, silent = true, desc = "Hover/documentacao"})
+    vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, {buffer = bufnr, silent = true, desc = "Rename"})
+    vim.keymap.set("n", "<F12>", vim.lsp.buf.definition, {buffer = bufnr, silent = true, desc = "Ir para definicao"})
 
     local function code_action_with_feedback(action_opts, done_delay_ms)
         local timeout_ms = action_opts.timeout_ms or 1200
@@ -148,9 +148,9 @@ local on_attach = function(_, bufnr)
             return
         end
         vim.lsp.buf.rename(new_name)
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Rename simbolo"})
 
-    vim.keymap.set("n", "<leader>lf", format_buffer_with_fallback, opts)
+    vim.keymap.set("n", "<leader>lf", format_buffer_with_fallback, {buffer = bufnr, silent = true, desc = "Formatar"})
 
     vim.keymap.set("n", "<leader>ca", function()
         local ft = vim.bo[bufnr].filetype
@@ -162,7 +162,7 @@ local on_attach = function(_, bufnr)
             },
             filter = make_code_action_filter(ft)
         })
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Code actions (rapido)"})
 
     -- Versao completa para casos em que voce quer todas as code actions sem limite de timeout.
     vim.keymap.set("n", "<leader>cA", function()
@@ -171,7 +171,7 @@ local on_attach = function(_, bufnr)
             timeout_ms = 5000,
             filter = make_code_action_filter(ft)
         }, 1000)
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Code actions (completo)"})
 
     vim.keymap.set("n", "<leader>cf", function()
         local ft = vim.bo[bufnr].filetype
@@ -183,7 +183,7 @@ local on_attach = function(_, bufnr)
             },
             filter = make_code_action_filter(ft, {"quickfix"})
         })
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Quickfix"})
 
     vim.keymap.set("n", "<leader>cr", function()
         local ft = vim.bo[bufnr].filetype
@@ -191,7 +191,7 @@ local on_attach = function(_, bufnr)
             timeout_ms = 1800,
             filter = make_code_action_filter(ft, {"refactor"})
         })
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Refactor"})
 
     vim.keymap.set("n", "<leader>cs", function()
         local ft = vim.bo[bufnr].filetype
@@ -199,7 +199,7 @@ local on_attach = function(_, bufnr)
             timeout_ms = 1800,
             filter = make_code_action_filter(ft, {"source"})
         })
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Source"})
 
     vim.keymap.set("n", "<leader>oi", function()
         local params = {
@@ -211,7 +211,7 @@ local on_attach = function(_, bufnr)
         }
 
         vim.lsp.buf.code_action(params)
-    end, opts)
+    end, {buffer = bufnr, silent = true, desc = "Organize imports"})
 end
 
 setup_server("lua_ls", {
@@ -261,10 +261,10 @@ vim.diagnostic.config({
     }
 })
 
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {silent = true})
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {silent = true})
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, {silent = true})
-vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", {silent = true})
-vim.keymap.set("n", "<leader>xl", "<cmd>Trouble loclist toggle<cr>", {silent = true})
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {silent = true, desc = "Diagnostico anterior"})
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {silent = true, desc = "Proximo diagnostico"})
+vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, {silent = true, desc = "Loclist"})
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", {silent = true, desc = "Workspace diagnostics"})
+vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", {silent = true, desc = "Buffer diagnostics"})
+vim.keymap.set("n", "<leader>xq", "<cmd>Trouble qflist toggle<cr>", {silent = true, desc = "Quickfix"})
+vim.keymap.set("n", "<leader>xl", "<cmd>Trouble loclist toggle<cr>", {silent = true, desc = "Loclist"})
