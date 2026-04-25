@@ -24,7 +24,7 @@ Este arquivo lista os atalhos adicionados pelas configuracoes atuais.
 | n | `<F2>` | Rename do simbolo |
 | n | `<F12>` | Ir para definicao |
 | n | `<leader>rn` | Rename do simbolo |
-| n | `<leader>f` | Formatar arquivo (LSP primeiro, fallback para Neoformat) |
+| n | `<leader>lf` | Formatar arquivo (LSP primeiro, fallback para Neoformat) |
 | n | `<leader>ca` | Code actions (modo rapido, com timeout curto e filtro para TS/JS) |
 | n | `<leader>cA` | Code actions completas (timeout maior) |
 | n | `<leader>cf` | Apenas quickfix code actions |
@@ -133,4 +133,4 @@ Dentro dos pickers do Telescope:
 ## Discoverability (arquivo: `lua/config/whichkey.lua`)
 
 - `which-key` habilitado para mostrar painel de atalhos ao usar `<leader>`.
-- Grupos configurados: Code, Find/Format, Git, Git Hunks, Diagnostics e Explorer.
+- Grupos configurados: Code, Find, Git, Git Hunks, LSP, Diagnostics e Explorer.

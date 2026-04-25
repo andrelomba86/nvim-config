@@ -10,9 +10,10 @@ which_key.setup({
 
 which_key.add({
     {"<leader>c", group = "Code"},
-    {"<leader>f", group = "Find/Format"},
+    {"<leader>f", group = "Find"},
     {"<leader>g", group = "Git"},
     {"<leader>h", group = "Git Hunks"},
+    {"<leader>l", group = "LSP"},
     {"<leader>x", group = "Diagnostics"},
     {"<leader><leader>", group = "Explorer"}
 })

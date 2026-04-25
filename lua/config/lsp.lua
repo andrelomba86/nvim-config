@@ -150,7 +150,7 @@ local on_attach = function(_, bufnr)
         vim.lsp.buf.rename(new_name)
     end, opts)
 
-    vim.keymap.set("n", "<leader>f", format_buffer_with_fallback, opts)
+    vim.keymap.set("n", "<leader>lf", format_buffer_with_fallback, opts)
 
     vim.keymap.set("n", "<leader>ca", function()
         local ft = vim.bo[bufnr].filetype
