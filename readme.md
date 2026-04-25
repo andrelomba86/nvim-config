@@ -88,6 +88,7 @@ Comportamento adicional:
 | Modo | Atalho | Acao |
 | --- | --- | --- |
 | n | `<leader>p` | Buscar arquivos no projeto |
+| n | `<leader>f.` | Reabrir o ultimo picker do Telescope |
 | n | `<leader>fr` | Buscar arquivos recentes |
 | n | `<leader>fg` | Buscar texto no projeto (live grep) |
 | n | `<leader>fb` | Buscar buffers abertos |
