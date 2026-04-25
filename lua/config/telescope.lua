@@ -24,6 +24,7 @@ vim.keymap.set("n", "<leader>fg", builtin.live_grep, {silent = true, desc = "Fin
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {silent = true, desc = "Find buffers"})
 vim.keymap.set("n", "<leader>fc", builtin.commands, {silent = true, desc = "Command palette"})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {silent = true, desc = "Find help"})
+vim.keymap.set("n", "<leader>fd", builtin.diagnostics, {silent = true, desc = "Find diagnostics"})
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, {silent = true, desc = "Find keymaps"})
 vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {silent = true, desc = "Document symbols"})
 vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, {silent = true, desc = "Workspace symbols"})
