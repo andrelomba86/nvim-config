@@ -46,6 +46,10 @@ return {
         opts = {}
     },
     {
+        "lewis6991/gitsigns.nvim",
+        opts = {}
+    },
+    {
         "doctorfree/cheatsheet.nvim",
         event = "VeryLazy",
         dependencies = {

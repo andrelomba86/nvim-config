@@ -6,6 +6,7 @@ require("config.lsp")
 require("config.cmp")
 require("config.autopairs")
 require("config.telescope")
+require("config.gitsigns")
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath

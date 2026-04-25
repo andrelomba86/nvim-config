@@ -54,6 +54,17 @@ Comportamento adicional:
 | n | `<C-l>` | Proximo buffer |
 | n | `<C-h>` | Buffer anterior |
 
+## Git (arquivo: `lua/config/gitsigns.lua`)
+
+| Modo | Atalho | Acao |
+| --- | --- | --- |
+| n | `]h` | Proximo hunk |
+| n | `[h` | Hunk anterior |
+| n | `<leader>hs` | Stage hunk |
+| n | `<leader>hr` | Reset hunk |
+| n | `<leader>hp` | Preview hunk |
+| n | `<leader>hb` | Alternar blame da linha atual |
+
 ## NvimTree (arquivo: `lua/config/nvimtree.lua`)
 
 | Modo | Atalho | Acao |
