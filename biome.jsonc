@@ -7,6 +7,9 @@
 	},
 	"javascript": {
 		"formatter": {
+			"enabled": true,
+			"indentStyle": "space",
+			"indentWidth": 2,
 			"quoteStyle": "single",
 			"lineWidth": 110,
 			"trailingCommas": "es5",

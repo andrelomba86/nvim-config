@@ -63,6 +63,20 @@ return {
         opts = {}
     },
     {
+        "sindrets/diffview.nvim",
+        cmd = {"DiffviewOpen", "DiffviewClose", "DiffviewFileHistory"},
+        keys = {
+            {"<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Git diff view"},
+            {"<leader>gD", "<cmd>DiffviewClose<CR>", desc = "Git diff close"},
+            {"<leader>gH", "<cmd>DiffviewFileHistory %<CR>", desc = "Git file history"},
+            {"<leader>gL", "<cmd>DiffviewFileHistory<CR>", desc = "Git repo history"}
+        },
+        dependencies = {"nvim-lua/plenary.nvim"},
+        config = function()
+            require("config.diffview").setup()
+        end
+    },
+    {
         "folke/which-key.nvim",
         event = "VimEnter",
         config = function()
