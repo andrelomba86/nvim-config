@@ -6,10 +6,7 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 require("nvim-tree").setup(
     {
-			hijack_cursor = true,
-        view = {
-            auto_close = true
-        },
+        hijack_cursor = true,
         update_focused_file = {
             enable = true,
             update_root = false,
