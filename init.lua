@@ -7,8 +7,17 @@ require("config.lsp")
 require("config.cmp")
 require("config.autopairs")
 require("config.telescope")
-require("config.gitsigns")
 require("config.gf").setup()
+require("config.git").setup()
+
+-- Trigger GitFile event when entering a git repository
+vim.api.nvim_create_autocmd("BufRead", {
+    callback = function()
+        if vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null"):match("true") then
+            vim.api.nvim_exec_autocmds("User", { pattern = "GitFile" })
+        end
+    end,
+})
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath

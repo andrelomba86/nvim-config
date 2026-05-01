@@ -60,20 +60,60 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
-        opts = {}
+        event = "User GitFile",
+        config = function()
+            require("config.gitsigns")
+        end
     },
     {
         "sindrets/diffview.nvim",
         cmd = {"DiffviewOpen", "DiffviewClose", "DiffviewFileHistory"},
-        keys = {
-            {"<leader>gd", "<cmd>DiffviewOpen<CR>", desc = "Git diff view"},
-            {"<leader>gD", "<cmd>DiffviewClose<CR>", desc = "Git diff close"},
-            {"<leader>gH", "<cmd>DiffviewFileHistory %<CR>", desc = "Git file history"},
-            {"<leader>gL", "<cmd>DiffviewFileHistory<CR>", desc = "Git repo history"}
-        },
         dependencies = {"nvim-lua/plenary.nvim"},
         config = function()
             require("config.diffview").setup()
+        end
+    },
+    {
+        "NeogitOrg/neogit",
+        cmd = {"Neogit"},
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        config = function()
+            local neogit = require("neogit")
+            neogit.setup({
+                kind = "replace",
+                disable_line_numbers = false,
+                disable_hint = false,
+                disable_context_highlighting = false,
+                disable_signs = false,
+                popup = {
+                    kind = "split",
+                },
+                integrations = {
+                    diffview = true,
+                    telescope = true,
+                },
+                signs = {
+                    section = { "▶", "▼" },
+                    item = { "▶", "▼" },
+                    hunk = { "", "" },
+                },
+            })
+
+            -- Keymaps for Neogit
+            vim.keymap.set("n", "<leader>gg", neogit.open, { silent = true, noremap = true, desc = "Neogit open" })
+            vim.keymap.set("n", "<leader>gm", function()
+                neogit.open({ "commit" })
+            end, { silent = true, noremap = true, desc = "Neogit commit" })
+            vim.keymap.set("n", "<leader>gP", function()
+                neogit.open({ "pull" })
+            end, { silent = true, noremap = true, desc = "Neogit pull" })
+            vim.keymap.set("n", "<leader>gU", function()
+                neogit.open({ "push" })
+            end, { silent = true, noremap = true, desc = "Neogit push" })
         end
     },
     {
