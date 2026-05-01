@@ -1,7 +1,8 @@
 require("biome")
 require("config.lazy")
 require("config.nvimtree")
-require("config.noice")
+-- require("config.noice")
+require('config.core_ui2')
 require("config.lsp")
 require("config.cmp")
 require("config.autopairs")
@@ -110,7 +111,7 @@ vim.api.nvim_create_autocmd(
                 local handle = io.popen("xset -q 2>/dev/null | grep 'Caps Lock' | grep -o 'on'")
                 local result = handle:read("*a")
                 handle:close()
-                
+
                 if result:match("on") then
                     os.execute("xdotool key Caps_Lock 2>/dev/null")
                 end

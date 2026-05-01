@@ -16,6 +16,9 @@ require("noice").setup(
                 input = {title = ""}
             }
         },
+				notify = {
+					enabled = false
+				},
         views = {
             cmdline_popup = {
                 border = {

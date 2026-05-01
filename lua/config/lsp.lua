@@ -95,7 +95,7 @@ local on_attach = function(_, bufnr)
 		local has_lsp_formatter = false
 
 		for _, client in ipairs(clients) do
-			if client and client.supports_method and client.supports_method("textDocument/formatting") then
+			if client and client:supports_method() and client:supports_method("textDocument/formatting") then
 				has_lsp_formatter = true
 				break
 			end
