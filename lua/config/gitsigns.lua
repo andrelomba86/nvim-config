@@ -88,11 +88,11 @@ gitsigns.setup({
         map("n", "<leader>gD", function() gs.diffthis("~") end, { desc = "Git diff this (cached)" })
 
         -- Toggle features
-        map("n", "<leader>gh", gs.toggle_signs, { desc = "Toggle hunk signs" })
-        map("n", "<leader>gw", gs.toggle_word_diff, { desc = "Toggle word diff" })
-        map("n", "<leader>gl", gs.toggle_linehl, { desc = "Toggle line highlight" })
-        map("n", "<leader>gn", gs.toggle_numhl, { desc = "Toggle num highlight" })
-        map("n", "<leader>gt", gs.toggle_current_line_blame, { desc = "Toggle current line blame" })
+        map("n", "<leader>gth", gs.toggle_signs, { desc = "Toggle hunk signs" })
+        map("n", "<leader>gtw", gs.toggle_word_diff, { desc = "Toggle word diff" })
+        map("n", "<leader>gtl", gs.toggle_linehl, { desc = "Toggle line highlight" })
+        map("n", "<leader>gtn", gs.toggle_numhl, { desc = "Toggle num highlight" })
+        map("n", "<leader>gtt", gs.toggle_current_line_blame, { desc = "Toggle current line blame" })
 
         -- Text object (select hunk)
         map({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Inside git hunk" })

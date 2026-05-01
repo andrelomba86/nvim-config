@@ -52,17 +52,6 @@ function M.setup()
             end,
         },
     })
-
-    local function map(mode, lhs, rhs, opts)
-        opts = vim.tbl_extend("force", { silent = true, noremap = true }, opts or {})
-        vim.keymap.set(mode, lhs, rhs, opts)
-    end
-
-    -- Diffview keymaps
-    map("n", "<leader>gv", "<cmd>DiffviewOpen<CR>", { desc = "Diffview open" })
-    map("n", "<leader>gf", "<cmd>DiffviewFileHistory %<CR>", { desc = "Diffview file history" })
-    map("n", "<leader>gh", "<cmd>DiffviewFileHistory<CR>", { desc = "Diffview repo history" })
-    map("n", "<leader>gc", "<cmd>DiffviewClose<CR>", { desc = "Diffview close" })
 end
 
 return M

@@ -34,12 +34,12 @@ Gitsigns shows git changes inline in the editor with signs (▶, ~, _, etc.).
 - `<leader>gd` - View git diff of current file
 - `<leader>gD` - View git diff (cached/staged)
 
-#### Toggles
-- `<leader>gh` - Toggle hunk signs visibility
-- `<leader>gw` - Toggle word diff
-- `<leader>gl` - Toggle line highlight
-- `<leader>gn` - Toggle number highlight
-- `<leader>gt` - Toggle current line blame
+#### Toggles (submenu under `<leader>gt`)
+- `<leader>gth` - Toggle hunk signs visibility
+- `<leader>gtw` - Toggle word diff
+- `<leader>gtl` - Toggle line highlight
+- `<leader>gtn` - Toggle num highlight
+- `<leader>gtt` - Toggle current line blame
 
 #### Text Objects
 - `ig` - Inside git hunk (visual/operator mode)
@@ -95,11 +95,11 @@ Neogit is a Magit-like git client for complex operations.
 | `<leader>gB` | Gitsigns | Blame line (full) |
 | `<leader>gd` | Gitsigns | Diff file |
 | `<leader>gD` | Gitsigns | Diff (cached) |
-| `<leader>gh` | Gitsigns | Toggle signs |
-| `<leader>gw` | Gitsigns | Toggle word diff |
-| `<leader>gl` | Gitsigns | Toggle line highlight |
-| `<leader>gn` | Gitsigns | Toggle num highlight |
-| `<leader>gt` | Gitsigns | Toggle line blame |
+| `<leader>gth` | Gitsigns | Toggle signs |
+| `<leader>gtw` | Gitsigns | Toggle word diff |
+| `<leader>gtl` | Gitsigns | Toggle line highlight |
+| `<leader>gtn` | Gitsigns | Toggle num highlight |
+| `<leader>gtt` | Gitsigns | Toggle line blame |
 | `ig` | Gitsigns | Select hunk |
 | `<leader>gv` | Diffview | Open diffview |
 | `<leader>gf` | Diffview | File history |

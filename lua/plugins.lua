@@ -69,6 +69,12 @@ return {
         "sindrets/diffview.nvim",
         cmd = {"DiffviewOpen", "DiffviewClose", "DiffviewFileHistory"},
         dependencies = {"nvim-lua/plenary.nvim"},
+        keys = {
+            {"<leader>gv", "<cmd>DiffviewOpen<CR>", desc = "Diffview open"},
+            {"<leader>gf", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file history"},
+            {"<leader>gh", "<cmd>DiffviewFileHistory<CR>", desc = "Diffview repo history"},
+            {"<leader>gc", "<cmd>DiffviewClose<CR>", desc = "Diffview close"},
+        },
         config = function()
             require("config.diffview").setup()
         end
@@ -76,6 +82,12 @@ return {
     {
         "NeogitOrg/neogit",
         cmd = {"Neogit"},
+        keys = {
+            {"<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit open"},
+            {"<leader>gm", "<cmd>Neogit commit<CR>", desc = "Neogit commit"},
+            {"<leader>gP", "<cmd>Neogit pull<CR>", desc = "Neogit pull"},
+            {"<leader>gU", "<cmd>Neogit push<CR>", desc = "Neogit push"},
+        },
         dependencies = {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
@@ -102,18 +114,6 @@ return {
                     hunk = { "", "" },
                 },
             })
-
-            -- Keymaps for Neogit
-            vim.keymap.set("n", "<leader>gg", neogit.open, { silent = true, noremap = true, desc = "Neogit open" })
-            vim.keymap.set("n", "<leader>gm", function()
-                neogit.open({ "commit" })
-            end, { silent = true, noremap = true, desc = "Neogit commit" })
-            vim.keymap.set("n", "<leader>gP", function()
-                neogit.open({ "pull" })
-            end, { silent = true, noremap = true, desc = "Neogit pull" })
-            vim.keymap.set("n", "<leader>gU", function()
-                neogit.open({ "push" })
-            end, { silent = true, noremap = true, desc = "Neogit push" })
         end
     },
     {
