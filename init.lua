@@ -1,5 +1,13 @@
 require("biome")
 require("config.lazy")
+
+-- Manually load and configure gitsigns to ensure keymaps are always available
+-- This works around lazy-loading timing issues
+pcall(function()
+    require("lazy").load({ plugins = {"gitsigns.nvim"} })
+    require("config.gitsigns")
+end)
+
 require("config.nvimtree")
 -- require("config.noice")
 require('config.core_ui2')
@@ -9,15 +17,6 @@ require("config.autopairs")
 require("config.telescope")
 require("config.gf").setup()
 require("config.git").setup()
-
--- Trigger GitFile event when entering a git repository
-vim.api.nvim_create_autocmd("BufRead", {
-    callback = function()
-        if vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null"):match("true") then
-            vim.api.nvim_exec_autocmds("User", { pattern = "GitFile" })
-        end
-    end,
-})
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath

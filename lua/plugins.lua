@@ -60,10 +60,6 @@ return {
     },
     {
         "lewis6991/gitsigns.nvim",
-        event = "User GitFile",
-        config = function()
-            require("config.gitsigns")
-        end
     },
     {
         "sindrets/diffview.nvim",
