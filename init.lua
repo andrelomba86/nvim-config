@@ -1,5 +1,6 @@
 require("biome")
 require("config.lazy")
+require("config.keymaps")
 
 -- Load and configure git tools
 -- pcall(function()
