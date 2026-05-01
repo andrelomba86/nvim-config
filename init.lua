@@ -8,7 +8,7 @@ require("config.keymaps")
 require("config.gitsigns")
 -- end)
 
-require("config.nvimtree")
+-- require("config.nvimtree") -- replaced with neo-tree
 -- require("config.noice")
 require('config.core_ui2')
 require("config.lsp")

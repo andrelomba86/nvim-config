@@ -18,10 +18,17 @@ return {
     {"ellisonleao/gruvbox.nvim"}, -- tema gruvbox
     {"matze/vim-move"}, -- used to move lines up and down (<a-j>,<a-k>)
     {
-        -- file tree
-        "nvim-tree/nvim-tree.lua",
-        cmd = {"NvimTreeToggle"}, -- 'on': 'NvimTreeToggle'
-        dependencies = {"nvim-tree/nvim-web-devicons"}
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
+        cmd = {"Neotree"},
+        config = function()
+            require("config.neotree")
+        end
     },
     {"sbdchd/neoformat"}, -- code auto formatting (Prettier)
     {"neovim/nvim-lspconfig"},
