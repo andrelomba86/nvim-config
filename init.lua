@@ -2,10 +2,10 @@ require("biome")
 require("config.lazy")
 
 -- Load and configure git tools
-pcall(function()
-    require("lazy").load({ plugins = {"gitsigns.nvim"} })
-    require("config.gitsigns")
-end)
+-- pcall(function()
+    -- require("lazy").load({ plugins = {"gitsigns.nvim"} })
+require("config.gitsigns")
+-- end)
 
 require("config.nvimtree")
 -- require("config.noice")

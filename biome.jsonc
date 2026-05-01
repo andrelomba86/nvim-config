@@ -12,7 +12,7 @@
 			"indentWidth": 2,
 			"quoteStyle": "single",
 			"lineWidth": 110,
-			"trailingCommas": "es5",
+			"trailingCommas": "all",
 			"semicolons": "asNeeded",
 			"arrowParentheses": "asNeeded",
 			"bracketSameLine": true
