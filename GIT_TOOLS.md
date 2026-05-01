@@ -65,6 +65,24 @@ Provides split-view for browsing git diffs with file tree and history.
 - Integrated with gitsigns
 - Help available with `g?`
 
+## Telescope Git Browser
+
+Browse git information with Telescope picker.
+
+| Key | Action |
+|-----|--------|
+| `<leader>Gb` | Git branches |
+| `<leader>Gc` | Git commits |
+| `<leader>Gf` | Git files |
+| `<leader>Gs` | Git status |
+
+### Features
+
+- Interactive branch switching
+- Commit history browsing
+- File picker filtered by git
+- Status overview with picker
+
 ## Neogit - Full Git Client
 
 Magit-like interface for complex git operations.

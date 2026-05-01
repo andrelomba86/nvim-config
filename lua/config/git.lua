@@ -80,6 +80,11 @@ function M.setup_which_key()
         { "<leader>gtw", desc = "Word Diff" },
         { "<leader>gU", desc = "Neogit (Push)" },
         { "<leader>gv", desc = "Diffview" },
+        { "<leader>G", group = "Git Browser", icon = "󰊢" },
+        { "<leader>Gb", desc = "Branches (Telescope)" },
+        { "<leader>Gc", desc = "Commits (Telescope)" },
+        { "<leader>Gf", desc = "Files (Telescope)" },
+        { "<leader>Gs", desc = "Status (Telescope)" },
         { "]g", desc = "Next Hunk" },
         { "[g", desc = "Previous Hunk" },
     })
