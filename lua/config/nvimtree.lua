@@ -6,11 +6,16 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 require("nvim-tree").setup(
     {
+			hijack_cursor = true,
+        view = {
+            auto_close = true
+        },
         update_focused_file = {
             enable = true,
             update_root = false,
             ignore_list = {}
         },
+        -- filters = {custom = {"^.git$"}},
         renderer = {
             group_empty = true,
             icons = {
@@ -41,18 +46,30 @@ require("nvim-tree").setup(
 )
 
 -- NvimTree key mappings
-vim.keymap.set("n", "<space>e", function()
-    local nvimtree_api = require("nvim-tree.api")
+vim.keymap.set(
+    "n",
+    "<space>e",
+    function()
+        local nvimtree_api = require("nvim-tree.api")
 
-    -- Verifica se está em um buffer da nvim-tree
-    if vim.bo.filetype == "NvimTree" then
-        nvimtree_api.tree.close()
-    else
-        nvimtree_api.tree.find_file({
-            open = true,
-            focus = true
-        })
-    end
-end, {silent = true, noremap = true, desc = "Abrir explorer"})
-vim.keymap.set("n", "<space><space>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true, desc = "Revelar arquivo"})
+        -- if vim.bo.filetype == "NvimTree" then
+        if nvimtree_api.tree.is_visible() then
+            nvimtree_api.tree.close()
+        else
+            nvimtree_api.tree.find_file(
+                {
+                    open = true,
+                    focus = true
+                }
+            )
+        end
+    end,
+    {silent = true, noremap = true, desc = "Abrir explorer"}
+)
+vim.keymap.set(
+    "n",
+    "<space><space>f",
+    ":NvimTreeFindFile<CR>",
+    {silent = true, noremap = true, desc = "Revelar arquivo"}
+)
 vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true, noremap = true, desc = "Alternar sidebar"})
