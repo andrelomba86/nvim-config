@@ -32,12 +32,12 @@ vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)", {
     desc = "Sugestao Copilot anterior"
 })
 
-vim.keymap.set("n", "<leader>ae", "<cmd>Copilot enable<cr>", {
+vim.keymap.set("n", "<space>ae", "<cmd>Copilot enable<cr>", {
     silent = true,
     desc = "Copilot enable"
 })
 
-vim.keymap.set("n", "<leader>ad", "<cmd>Copilot disable<cr>", {
+vim.keymap.set("n", "<space>ad", "<cmd>Copilot disable<cr>", {
     silent = true,
     desc = "Copilot disable"
 })

@@ -72,4 +72,4 @@ require("bufferline").setup(
 
 vim.keymap.set("n", "<C-l>", ":BufferLineCycleNext<CR>", {silent = true, desc = "Proximo buffer"})
 vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", {silent = true, desc = "Buffer anterior"})
-vim.keymap.set("n", "<leader>w", ":bdelete<CR>", {silent = true, desc = "Fechar buffer"})
+vim.keymap.set("n", "<space>w", ":bdelete<CR>", {silent = true, desc = "Fechar buffer"})

@@ -15,9 +15,9 @@ vim.keymap.set("x", "<C-_>", function()
 end, {silent = true, desc = "Toggle comment"})
 
 -- Fallback mapping for terminals where Ctrl+/ is not propagated.
-vim.keymap.set("n", "<leader>/", function()
+vim.keymap.set("n", "<space>/", function()
     api.toggle.linewise.current()
 end, {silent = true, desc = "Toggle comment"})
-vim.keymap.set("x", "<leader>/", function()
+vim.keymap.set("x", "<space>/", function()
     api.toggle.linewise(vim.fn.visualmode())
 end, {silent = true, desc = "Toggle comment"})

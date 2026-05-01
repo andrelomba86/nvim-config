@@ -24,5 +24,5 @@ vim.keymap.set("n", "[t", function()
     require("todo-comments").jump_prev()
 end, {silent = true, desc = "TODO anterior"})
 
-vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", {silent = true, desc = "Buscar TODOs"})
-vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", {silent = true, desc = "Painel TODOs"})
+vim.keymap.set("n", "<space>ft", "<cmd>TodoTelescope<cr>", {silent = true, desc = "Buscar TODOs"})
+vim.keymap.set("n", "<space>xt", "<cmd>Trouble todo toggle<cr>", {silent = true, desc = "Painel TODOs"})

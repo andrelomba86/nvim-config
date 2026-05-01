@@ -17,27 +17,27 @@ The configuration now includes three complementary git tools with AstroNvim-styl
 | Key | Action |
 |-----|--------|
 | `]g` / `[g` | Next/Previous hunk |
-| `<leader>gs` | Stage hunk (normal/visual) |
-| `<leader>gS` | Stage entire buffer |
-| `<leader>gr` | Reset hunk (normal/visual) |
-| `<leader>gR` | Reset entire buffer |
-| `<leader>gp` | Preview hunk |
-| `<leader>gb` | Blame line |
-| `<leader>gB` | Blame line (full commit info) |
-| `<leader>gd` | Diff current file |
-| `<leader>gD` | Diff (cached/staged) |
+| `<space>gs` | Stage hunk (normal/visual) |
+| `<space>gS` | Stage entire buffer |
+| `<space>gr` | Reset hunk (normal/visual) |
+| `<space>gR` | Reset entire buffer |
+| `<space>gp` | Preview hunk |
+| `<space>gb` | Blame line |
+| `<space>gB` | Blame line (full commit info) |
+| `<space>gd` | Diff current file |
+| `<space>gD` | Diff (cached/staged) |
 
 ### Toggles
 
-All toggles available under `<leader>gt`:
+All toggles available under `<space>gt`:
 
 | Key | Action |
 |-----|--------|
-| `<leader>gth` | Toggle hunk signs visibility |
-| `<leader>gtw` | Toggle word diff highlighting |
-| `<leader>gtl` | Toggle line highlight |
-| `<leader>gtn` | Toggle number highlight |
-| `<leader>gtt` | Toggle current line blame |
+| `<space>gth` | Toggle hunk signs visibility |
+| `<space>gtw` | Toggle word diff highlighting |
+| `<space>gtl` | Toggle line highlight |
+| `<space>gtn` | Toggle number highlight |
+| `<space>gtt` | Toggle current line blame |
 
 ### Text Objects
 
@@ -51,10 +51,10 @@ Provides split-view for browsing git diffs with file tree and history.
 
 | Key | Action |
 |-----|--------|
-| `<leader>gv` | Open diffview (current changes) |
-| `<leader>gf` | File history (current file) |
-| `<leader>gh` | Repo history (all branches) |
-| `<leader>gc` | Close diffview |
+| `<space>gv` | Open diffview (current changes) |
+| `<space>gf` | File history (current file) |
+| `<space>gh` | Repo history (all branches) |
+| `<space>gc` | Close diffview |
 
 ### Features
 
@@ -71,10 +71,10 @@ Browse git information with Telescope picker.
 
 | Key | Action |
 |-----|--------|
-| `<leader>Gb` | Git branches |
-| `<leader>Gc` | Git commits |
-| `<leader>Gf` | Git files |
-| `<leader>Gs` | Git status |
+| `<space>Gb` | Git branches |
+| `<space>Gc` | Git commits |
+| `<space>Gf` | Git files |
+| `<space>Gs` | Git status |
 
 ### Features
 
@@ -89,10 +89,10 @@ Magit-like interface for complex git operations.
 
 | Key | Action |
 |-----|--------|
-| `<leader>gg` | Open Neogit (main status view) |
-| `<leader>gm` | Open Neogit (commit view) |
-| `<leader>gP` | Open Neogit (pull dialog) |
-| `<leader>gU` | Open Neogit (push dialog) |
+| `<space>gg` | Open Neogit (main status view) |
+| `<space>gm` | Open Neogit (commit view) |
+| `<space>gP` | Open Neogit (pull dialog) |
+| `<space>gU` | Open Neogit (push dialog) |
 
 ### Features
 
@@ -106,7 +106,7 @@ Magit-like interface for complex git operations.
 
 ### Neogit Workflow
 
-1. Open status: `<leader>gg`
+1. Open status: `<space>gg`
 2. Stage changes with `s` or `u` to unstage
 3. Commit with `c c` (compose commit)
 4. Push with `P` or pull with `l`
@@ -122,18 +122,18 @@ Magit-like interface for complex git operations.
 
 ### Quick hunk staging
 1. Use `]g`/`[g` to navigate hunks
-2. Use `<leader>gs` to stage individual hunks
-3. Use `<leader>gp` to preview before staging
-4. Use `<leader>gg` to commit
+2. Use `<space>gs` to stage individual hunks
+3. Use `<space>gp` to preview before staging
+4. Use `<space>gg` to commit
 
 ### Reviewing branch changes
-1. Use `<leader>gv` to open diffview
+1. Use `<space>gv` to open diffview
 2. Navigate files in left panel
 3. Review diffs in main panel
-4. Close with `<leader>gc` or `q`
+4. Close with `<space>gc` or `q`
 
 ### Complex operations
-1. Use `<leader>gg` to open Neogit for complex operations
+1. Use `<space>gg` to open Neogit for complex operations
 2. Rebase, merge, reset, or cherry-pick within Neogit
 3. Integrated with Diffview for reviewing changes
 
@@ -154,15 +154,15 @@ Magit-like interface for complex git operations.
 ### Using Hunks Efficiently
 - Stage only the changes you want to commit
 - Use visual selection (`v`) for partial hunk staging
-- Preview (`<leader>gp`) before staging to avoid mistakes
+- Preview (`<space>gp`) before staging to avoid mistakes
 
 ### Viewing Diffs
-- `<leader>gd` shows working tree changes
-- `<leader>gD` shows staged changes (--cached)
-- `<leader>gv` is best for reviewing multiple files
+- `<space>gd` shows working tree changes
+- `<space>gD` shows staged changes (--cached)
+- `<space>gv` is best for reviewing multiple files
 
 ### Blaming Code
-- `<leader>gb` shows blame for current line
-- `<leader>gB` shows full commit information
+- `<space>gb` shows blame for current line
+- `<space>gB` shows full commit information
 - Useful with blame lines in blame-mode for understanding history
 

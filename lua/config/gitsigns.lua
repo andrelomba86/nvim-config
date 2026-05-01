@@ -73,40 +73,40 @@ local function setup_keymaps()
     end, vim.tbl_extend("force", keymap_opts, { expr = true, desc = "Previous Hunk" }))
 
     -- Stage
-    vim.keymap.set("n", "<leader>gs", gitsigns.stage_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Stage Hunk" }))
-    vim.keymap.set("v", "<leader>gs", function()
+    vim.keymap.set("n", "<space>gs", gitsigns.stage_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Stage Hunk" }))
+    vim.keymap.set("v", "<space>gs", function()
         gitsigns.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, vim.tbl_extend("force", keymap_opts, { desc = "Stage Hunk" }))
 
-    vim.keymap.set("n", "<leader>gS", gitsigns.stage_buffer, vim.tbl_extend("force", keymap_opts, { desc = "Stage Buffer" }))
+    vim.keymap.set("n", "<space>gS", gitsigns.stage_buffer, vim.tbl_extend("force", keymap_opts, { desc = "Stage Buffer" }))
 
     -- Reset
-    vim.keymap.set("n", "<leader>gr", gitsigns.reset_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Reset Hunk" }))
-    vim.keymap.set("v", "<leader>gr", function()
+    vim.keymap.set("n", "<space>gr", gitsigns.reset_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Reset Hunk" }))
+    vim.keymap.set("v", "<space>gr", function()
         gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
     end, vim.tbl_extend("force", keymap_opts, { desc = "Reset Hunk" }))
 
-    vim.keymap.set("n", "<leader>gR", gitsigns.reset_buffer, vim.tbl_extend("force", keymap_opts, { desc = "Reset Buffer" }))
+    vim.keymap.set("n", "<space>gR", gitsigns.reset_buffer, vim.tbl_extend("force", keymap_opts, { desc = "Reset Buffer" }))
 
     -- Preview and Blame
-    vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Preview Hunk" }))
-    vim.keymap.set("n", "<leader>gb", gitsigns.blame_line, vim.tbl_extend("force", keymap_opts, { desc = "Blame Line" }))
-    vim.keymap.set("n", "<leader>gB", function()
+    vim.keymap.set("n", "<space>gp", gitsigns.preview_hunk, vim.tbl_extend("force", keymap_opts, { desc = "Preview Hunk" }))
+    vim.keymap.set("n", "<space>gb", gitsigns.blame_line, vim.tbl_extend("force", keymap_opts, { desc = "Blame Line" }))
+    vim.keymap.set("n", "<space>gB", function()
         gitsigns.blame_line({ full = true })
     end, vim.tbl_extend("force", keymap_opts, { desc = "Blame Line (Full)" }))
 
     -- Diff
-    vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, vim.tbl_extend("force", keymap_opts, { desc = "Diff This" }))
-    vim.keymap.set("n", "<leader>gD", function()
+    vim.keymap.set("n", "<space>gd", gitsigns.diffthis, vim.tbl_extend("force", keymap_opts, { desc = "Diff This" }))
+    vim.keymap.set("n", "<space>gD", function()
         gitsigns.diffthis("~")
     end, vim.tbl_extend("force", keymap_opts, { desc = "Diff Cached" }))
 
     -- Toggle
-    vim.keymap.set("n", "<leader>gth", gitsigns.toggle_signs, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Signs" }))
-    vim.keymap.set("n", "<leader>gtw", gitsigns.toggle_word_diff, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Word Diff" }))
-    vim.keymap.set("n", "<leader>gtl", gitsigns.toggle_linehl, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Line Highlight" }))
-    vim.keymap.set("n", "<leader>gtn", gitsigns.toggle_numhl, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Num Highlight" }))
-    vim.keymap.set("n", "<leader>gtt", gitsigns.toggle_current_line_blame, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Blame" }))
+    vim.keymap.set("n", "<space>gth", gitsigns.toggle_signs, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Signs" }))
+    vim.keymap.set("n", "<space>gtw", gitsigns.toggle_word_diff, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Word Diff" }))
+    vim.keymap.set("n", "<space>gtl", gitsigns.toggle_linehl, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Line Highlight" }))
+    vim.keymap.set("n", "<space>gtn", gitsigns.toggle_numhl, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Num Highlight" }))
+    vim.keymap.set("n", "<space>gtt", gitsigns.toggle_current_line_blame, vim.tbl_extend("force", keymap_opts, { desc = "Toggle Blame" }))
 
     -- Text object
     vim.keymap.set({ "o", "x" }, "ig", ":<C-U>Gitsigns select_hunk<CR>", vim.tbl_extend("force", keymap_opts, { desc = "Inside Hunk" }))

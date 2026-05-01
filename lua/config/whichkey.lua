@@ -9,16 +9,16 @@ which_key.setup({
 })
 
 which_key.add({
-    {"<leader>a", group = "AI"},
-    {"<leader>c", group = "Code"},
-    {"<leader>f", group = "Find"},
-    {"<leader>g", group = "Git"},
-    {"<leader>gd", desc = "Git diff view"},
-    {"<leader>gD", desc = "Git diff close"},
-    {"<leader>gH", desc = "Git file history"},
-    {"<leader>gL", desc = "Git repo history"},
-    {"<leader>h", group = "Git Hunks"},
-    {"<leader>l", group = "LSP"},
-    {"<leader>x", group = "Diagnostics"},
-    {"<leader><leader>", group = "Explorer"}
+    {"<space>a", group = "AI"},
+    {"<space>c", group = "Code"},
+    {"<space>f", group = "Find"},
+    {"<space>g", group = "Git"},
+    {"<space>gd", desc = "Git diff view"},
+    {"<space>gD", desc = "Git diff close"},
+    {"<space>gH", desc = "Git file history"},
+    {"<space>gL", desc = "Git repo history"},
+    {"<space>h", group = "Git Hunks"},
+    {"<space>l", group = "LSP"},
+    {"<space>x", group = "Diagnostics"},
+    {"<space><space>", group = "Explorer"}
 })

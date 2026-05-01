@@ -41,7 +41,7 @@ require("nvim-tree").setup(
 )
 
 -- NvimTree key mappings
-vim.keymap.set("n", "<leader>e", function()
+vim.keymap.set("n", "<space>e", function()
     local nvimtree_api = require("nvim-tree.api")
 
     -- Verifica se está em um buffer da nvim-tree
@@ -54,5 +54,5 @@ vim.keymap.set("n", "<leader>e", function()
         })
     end
 end, {silent = true, noremap = true, desc = "Abrir explorer"})
-vim.keymap.set("n", "<leader><leader>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true, desc = "Revelar arquivo"})
+vim.keymap.set("n", "<space><space>f", ":NvimTreeFindFile<CR>", {silent = true, noremap = true, desc = "Revelar arquivo"})
 vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", {silent = true, noremap = true, desc = "Alternar sidebar"})

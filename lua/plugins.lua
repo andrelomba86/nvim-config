@@ -66,10 +66,10 @@ return {
         cmd = {"DiffviewOpen", "DiffviewClose", "DiffviewFileHistory"},
         dependencies = {"nvim-lua/plenary.nvim"},
         keys = {
-            {"<leader>gv", "<cmd>DiffviewOpen<CR>", desc = "Diffview open"},
-            {"<leader>gf", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file history"},
-            {"<leader>gh", "<cmd>DiffviewFileHistory<CR>", desc = "Diffview repo history"},
-            {"<leader>gc", "<cmd>DiffviewClose<CR>", desc = "Diffview close"},
+            {"<space>gv", "<cmd>DiffviewOpen<CR>", desc = "Diffview open"},
+            {"<space>gf", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file history"},
+            {"<space>gh", "<cmd>DiffviewFileHistory<CR>", desc = "Diffview repo history"},
+            {"<space>gc", "<cmd>DiffviewClose<CR>", desc = "Diffview close"},
         },
         config = function()
             require("config.diffview").setup()
@@ -84,10 +84,10 @@ return {
             "nvim-telescope/telescope.nvim",
         },
         keys = {
-            {"<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit Status"},
-            {"<leader>gm", "<cmd>Neogit commit<CR>", desc = "Neogit Commit"},
-            {"<leader>gP", "<cmd>Neogit pull<CR>", desc = "Neogit Pull"},
-            {"<leader>gU", "<cmd>Neogit push<CR>", desc = "Neogit Push"},
+            {"<space>gg", "<cmd>Neogit<CR>", desc = "Neogit Status"},
+            {"<space>gm", "<cmd>Neogit commit<CR>", desc = "Neogit Commit"},
+            {"<space>gP", "<cmd>Neogit pull<CR>", desc = "Neogit Pull"},
+            {"<space>gU", "<cmd>Neogit push<CR>", desc = "Neogit Push"},
         },
         config = function()
             require("config.neogit").setup()
