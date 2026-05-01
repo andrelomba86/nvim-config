@@ -1,20 +1,6 @@
--- Git tools configuration module
--- Consolidates configuration for git-related tools and keymaps
+-- Git utilities and integration setup
+-- Handles git status, branch info, and keymaps organization
 local M = {}
-
---- Setup git tools integrations
-function M.setup()
-    -- Create which-key descriptions for git mappings
-    local ok_which, which_key = pcall(require, "which-key")
-    if ok_which then
-        which_key.add({
-            { "<leader>g", group = "Git", icon = "" },
-            { "<leader>gs", group = "Stage" },
-            { "<leader>gr", group = "Reset" },
-            { "<leader>g", desc = "Git Operations" },
-        })
-    end
-end
 
 --- Get git root directory
 function M.get_git_root()
@@ -62,9 +48,41 @@ function M.get_git_status()
     return nil
 end
 
---- Trigger User autocmd for git file
-function M.trigger_git_file()
-    vim.api.nvim_exec_autocmds("User", { pattern = "GitFile" })
+--- Setup which-key descriptions for git operations
+function M.setup_which_key()
+    local ok_which, which_key = pcall(require, "which-key")
+    if not ok_which then
+        return
+    end
+
+    which_key.add({
+        { "<leader>g", group = "Git", icon = "" },
+        { "<leader>gb", desc = "Blame" },
+        { "<leader>gB", desc = "Blame (Full)" },
+        { "<leader>gc", desc = "Close Diffview" },
+        { "<leader>gd", desc = "Diff Current" },
+        { "<leader>gD", desc = "Diff Cached" },
+        { "<leader>gf", desc = "File History" },
+        { "<leader>gh", desc = "Repo History" },
+        { "<leader>gg", desc = "Neogit (Status)" },
+        { "<leader>gm", desc = "Neogit (Commit)" },
+        { "<leader>gP", desc = "Neogit (Pull)" },
+        { "<leader>gp", desc = "Preview Hunk" },
+        { "<leader>gr", desc = "Reset Hunk" },
+        { "<leader>gR", desc = "Reset Buffer" },
+        { "<leader>gs", desc = "Stage Hunk" },
+        { "<leader>gS", desc = "Stage Buffer" },
+        { "<leader>gt", group = "Toggle", icon = "✓" },
+        { "<leader>gth", desc = "Hunk Signs" },
+        { "<leader>gtl", desc = "Line Highlight" },
+        { "<leader>gtn", desc = "Number Highlight" },
+        { "<leader>gtt", desc = "Current Line Blame" },
+        { "<leader>gtw", desc = "Word Diff" },
+        { "<leader>gU", desc = "Neogit (Push)" },
+        { "<leader>gv", desc = "Diffview" },
+        { "]g", desc = "Next Hunk" },
+        { "[g", desc = "Previous Hunk" },
+    })
 end
 
 return M

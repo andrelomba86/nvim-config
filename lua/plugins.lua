@@ -78,38 +78,19 @@ return {
     {
         "NeogitOrg/neogit",
         cmd = {"Neogit"},
-        keys = {
-            {"<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit open"},
-            {"<leader>gm", "<cmd>Neogit commit<CR>", desc = "Neogit commit"},
-            {"<leader>gP", "<cmd>Neogit pull<CR>", desc = "Neogit pull"},
-            {"<leader>gU", "<cmd>Neogit push<CR>", desc = "Neogit push"},
-        },
         dependencies = {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
+        keys = {
+            {"<leader>gg", "<cmd>Neogit<CR>", desc = "Neogit Status"},
+            {"<leader>gm", "<cmd>Neogit commit<CR>", desc = "Neogit Commit"},
+            {"<leader>gP", "<cmd>Neogit pull<CR>", desc = "Neogit Pull"},
+            {"<leader>gU", "<cmd>Neogit push<CR>", desc = "Neogit Push"},
+        },
         config = function()
-            local neogit = require("neogit")
-            neogit.setup({
-                kind = "replace",
-                disable_line_numbers = false,
-                disable_hint = false,
-                disable_context_highlighting = false,
-                disable_signs = false,
-                popup = {
-                    kind = "split",
-                },
-                integrations = {
-                    diffview = true,
-                    telescope = true,
-                },
-                signs = {
-                    section = { "▶", "▼" },
-                    item = { "▶", "▼" },
-                    hunk = { "", "" },
-                },
-            })
+            require("config.neogit").setup()
         end
     },
     {

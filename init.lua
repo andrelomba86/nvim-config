@@ -1,8 +1,7 @@
 require("biome")
 require("config.lazy")
 
--- Manually load and configure gitsigns to ensure keymaps are always available
--- This works around lazy-loading timing issues
+-- Load and configure git tools
 pcall(function()
     require("lazy").load({ plugins = {"gitsigns.nvim"} })
     require("config.gitsigns")
@@ -16,7 +15,7 @@ require("config.cmp")
 require("config.autopairs")
 require("config.telescope")
 require("config.gf").setup()
-require("config.git").setup()
+require("config.git").setup_which_key()
 
 -- Set packpath to match runtimepath
 vim.o.packpath = vim.o.runtimepath
