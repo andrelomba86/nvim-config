@@ -25,7 +25,11 @@ return {
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
-        cmd = {"Neotree"},
+        keys = {
+            { "<space>e", "<cmd>Neotree filesystem reveal left<CR>", desc = "Abrir explorer" },
+            { "<C-b>", "<cmd>Neotree filesystem toggle left<CR>", desc = "Alternar sidebar" },
+            { "<space><space>f", "<cmd>Neotree filesystem reveal left<CR>", desc = "Revelar arquivo" },
+        },
         config = function()
             require("config.neotree")
         end
