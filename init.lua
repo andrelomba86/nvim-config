@@ -3,13 +3,7 @@ require("config.lazy")
 require("config.keymaps")
 
 -- Load and configure git tools
--- pcall(function()
-    -- require("lazy").load({ plugins = {"gitsigns.nvim"} })
 require("config.gitsigns")
--- end)
-
--- require("config.nvimtree") -- replaced with neo-tree
--- require("config.noice")
 require('config.core_ui2')
 require("config.lsp")
 require("config.cmp")
