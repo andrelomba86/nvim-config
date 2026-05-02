@@ -1,7 +1,6 @@
+-- Configure copilot.vim using global settings (copilot.vim doesn't expose a Lua module)
 vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
-
--- Keep Copilot enabled by default for common editable filetypes.
 vim.g.copilot_filetypes = {
     ["*"] = true,
     help = false,
@@ -9,35 +8,98 @@ vim.g.copilot_filetypes = {
     gitrebase = true
 }
 
--- Accept Copilot suggestion without conflicting with cmp's <Tab> mapping.
+-- Keymaps for copilot suggestions
 vim.keymap.set("i", "<C-y>", 'copilot#Accept("<CR>")', {
     expr = true,
     silent = true,
     replace_keycodes = false,
-    desc = "Aceitar sugestao Copilot"
-})
-
-vim.keymap.set("i", "<C-e>", "<Plug>(copilot-dismiss)", {
-    silent = true,
-    desc = "Descartar sugestao Copilot"
+    desc = "Accept Copilot suggestion"
 })
 
 vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)", {
     silent = true,
-    desc = "Proxima sugestao Copilot"
+    desc = "Next Copilot suggestion"
 })
 
 vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)", {
     silent = true,
-    desc = "Sugestao Copilot anterior"
+    desc = "Previous Copilot suggestion"
 })
 
-vim.keymap.set("n", "<space>ae", "<cmd>Copilot enable<cr>", {
+vim.keymap.set("i", "<M-y>", "<Plug>(copilot-dismiss)", {
     silent = true,
-    desc = "Copilot enable"
+    desc = "Dismiss Copilot suggestion"
 })
 
-vim.keymap.set("n", "<space>ad", "<cmd>Copilot disable<cr>", {
-    silent = true,
-    desc = "Copilot disable"
-})
+vim.api.nvim_set_hl(0, "CopilotSuggestion", {fg = "#009090", italic = true})
+--
+-- -- Keep Copilot enabled by default for common editable filetypes.
+-- vim.g.copilot_filetypes = {
+--     ["*"] = true,
+--     help = false,
+--     gitcommit = true,
+--     gitrebase = true
+-- }
+-- vim.api.nvim_set_hl(0, "CopilotSuggestion", {fg = "#108080", italic = true})
+-- -- Accept Copilot suggestion without conflicting with cmp's <Tab> mapping.
+-- vim.keymap.set(
+--     {"i", "n"},
+--     "<C-y>",
+--     'copilot#Accept("<CR>")',
+--     {
+--         expr = true,
+--         silent = true,
+--         replace_keycodes = false,
+--         desc = "Aceitar sugestao Copilot"
+--     }
+-- )
+--
+-- vim.keymap.set(
+--     {"i", "n"},
+--     "<C-n>",
+--     "<Plug>(copilot-dismiss)",
+--     {
+--         silent = true,
+--         desc = "Descartar sugestao Copilot"
+--     }
+-- )
+--
+-- vim.keymap.set(
+--     {"i", "n"},
+--     "<M-]>",
+--     "<Plug>(copilot-next)",
+--     {
+--         silent = true,
+--         desc = "Proxima sugestao Copilot"
+--     }
+-- )
+--
+-- vim.keymap.set(
+--     "i",
+--     "<M-[>",
+--     "<Plug>(copilot-previous)",
+--     {
+--         silent = true,
+--         desc = "Sugestao Copilot anterior"
+--     }
+-- )
+--
+-- vim.keymap.set(
+--     "n",
+--     "<space>ae",
+--     "<cmd>Copilot enable<cr>",
+--     {
+--         silent = true,
+--         desc = "Copilot enable"
+--     }
+-- )
+--
+-- vim.keymap.set(
+--     "n",
+--     "<space>ad",
+--     "<cmd>Copilot disable<cr>",
+--     {
+--         silent = true,
+--         desc = "Copilot disable"
+--     }
+-- )
