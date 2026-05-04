@@ -44,7 +44,7 @@ vim.opt.listchars = {tab = ">-", eol = "⊲", space = "."} -- ⊲ is U+22B2
 vim.opt.cursorline = true
 
 -- Change colorscheme
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme hackthebox")
 
 -- vim.opt.t_SI = "\\e[5 q" -- Cursor em linha no modo insert
 -- vim.opt.t_EI = "\\e[0 q" -- Cursor em bloco nos outros modos

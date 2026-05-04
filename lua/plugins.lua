@@ -1,4 +1,5 @@
 return {
+    {"audibleblink/hackthebox.vim"},
     {"tpope/vim-sensible"},
     {"WolfgangMehner/bash-support"},
     {"itchyny/lightline.vim"},
@@ -23,12 +24,12 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
+            "MunifTanjim/nui.nvim"
         },
         keys = {
-            { "<space>e", "<cmd>Neotree filesystem reveal left<CR>", desc = "Abrir explorer" },
-            { "<C-b>", "<cmd>Neotree filesystem toggle left<CR>", desc = "Alternar sidebar" },
-            { "<space><space>f", "<cmd>Neotree filesystem reveal left<CR>", desc = "Revelar arquivo" },
+            {"<space>e", "<cmd>Neotree filesystem reveal left<CR>", desc = "Abrir explorer"},
+            {"<C-b>", "<cmd>Neotree filesystem toggle left<CR>", desc = "Alternar sidebar"},
+            {"<space><space>f", "<cmd>Neotree filesystem reveal left<CR>", desc = "Revelar arquivo"}
         },
         config = function()
             require("config.neotree")
@@ -70,7 +71,7 @@ return {
         end
     },
     {
-        "lewis6991/gitsigns.nvim",
+        "lewis6991/gitsigns.nvim"
     },
     {
         "sindrets/diffview.nvim",
@@ -80,7 +81,7 @@ return {
             {"<space>gv", "<cmd>DiffviewOpen<CR>", desc = "Diffview open"},
             {"<space>gf", "<cmd>DiffviewFileHistory %<CR>", desc = "Diffview file history"},
             {"<space>gh", "<cmd>DiffviewFileHistory<CR>", desc = "Diffview repo history"},
-            {"<space>gc", "<cmd>DiffviewClose<CR>", desc = "Diffview close"},
+            {"<space>gc", "<cmd>DiffviewClose<CR>", desc = "Diffview close"}
         },
         config = function()
             require("config.diffview").setup()
@@ -92,13 +93,13 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "sindrets/diffview.nvim",
-            "nvim-telescope/telescope.nvim",
+            "nvim-telescope/telescope.nvim"
         },
         keys = {
             {"<space>gg", "<cmd>Neogit<CR>", desc = "Neogit Status"},
             {"<space>gm", "<cmd>Neogit commit<CR>", desc = "Neogit Commit"},
             {"<space>gP", "<cmd>Neogit pull<CR>", desc = "Neogit Pull"},
-            {"<space>gU", "<cmd>Neogit push<CR>", desc = "Neogit Push"},
+            {"<space>gU", "<cmd>Neogit push<CR>", desc = "Neogit Push"}
         },
         config = function()
             require("config.neogit").setup()
