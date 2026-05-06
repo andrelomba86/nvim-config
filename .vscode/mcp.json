@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "neovim_docs_search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "env": {
+        "MCP_FETCH_ALLOWED_HOSTS": "neovim.io,github.com,raw.githubusercontent.com"
+      }
+    }
+  }
+}

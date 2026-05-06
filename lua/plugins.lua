@@ -6,8 +6,28 @@ return {
     {"tpope/vim-surround"}, -- replace 'surround closing parens: ysi3w[  ds[
     {
         "numToStr/Comment.nvim",
+        dependencies = {"JoosepAlviste/nvim-ts-context-commentstring"},
         config = function()
             require("config.comment")
+        end
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            require("config.treesitter")
+        end
+    },
+    {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        dependencies = {"nvim-treesitter/nvim-treesitter"},
+        config = function()
+            local ok_ts_context, ts_context = pcall(require, "ts_context_commentstring")
+            if not ok_ts_context then
+                return
+            end
+
+            ts_context.setup({enable_autocmd = false})
         end
     },
     {"itmammoth/doorboy.vim"}, -- highlight brackets
