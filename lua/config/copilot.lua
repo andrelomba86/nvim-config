@@ -31,7 +31,7 @@ vim.keymap.set("i", "<M-y>", "<Plug>(copilot-dismiss)", {
     desc = "Dismiss Copilot suggestion"
 })
 
-vim.api.nvim_set_hl(0, "CopilotSuggestion", {fg = "#009090", italic = true})
+vim.api.nvim_set_hl(0, "CopilotSuggestion", {fg = "#5fd7c7", italic = true})
 
 vim.keymap.set(
     "n",

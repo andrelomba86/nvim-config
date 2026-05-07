@@ -46,6 +46,14 @@ vim.opt.cursorline = true
 -- Change colorscheme
 vim.cmd("colorscheme hackthebox")
 
+-- Keep diagnostic virtual text readable in this colorscheme.
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", {fg = "#ff7a90", bg = "NONE"})
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", {fg = "#ffd37a", bg = "NONE"})
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextInfo", {fg = "#73c6ff", bg = "NONE"})
+vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", {fg = "#66d9c0", bg = "NONE"})
+vim.api.nvim_set_hl(0, "LspInlayHint", {fg = "#7aa2f7", bg = "NONE", italic = true})
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {fg = "#7a8699", bg = "NONE", italic = true})
+
 -- vim.opt.t_SI = "\\e[5 q" -- Cursor em linha no modo insert
 -- vim.opt.t_EI = "\\e[0 q" -- Cursor em bloco nos outros modos
 vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25"
