@@ -29,8 +29,8 @@ vim.api.nvim_create_autocmd({"BufReadPost", "BufNewFile"}, {
     end
 })
 
-vim.api.nvim_set_hl(0, "IlluminatedWord", {bg = "#2c2c3c", underline = false})
-vim.api.nvim_set_hl(0, "IlluminatedCWord", {bg = "#2c2c3c", underline = false})
-vim.api.nvim_set_hl(0, "IlluminatedWordText", {bg = "#2c2c3c", underline = false})
-vim.api.nvim_set_hl(0, "IlluminatedWordRead", {bg = "#2c2c3c", underline = false})
-vim.api.nvim_set_hl(0, "IlluminatedWordWrite", {bg = "#2c2c3c", underline = false})
+vim.api.nvim_set_hl(0, "IlluminatedWord", {bg = "#444466", bold = true})
+vim.api.nvim_set_hl(0, "IlluminatedCWord", {bg = "#444466", bold = true})
+vim.api.nvim_set_hl(0, "IlluminatedWordText", {bg = "#444466", bold = true})
+vim.api.nvim_set_hl(0, "IlluminatedWordRead", {bg = "#444466", bold = true})
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", {bg = "#444466", bold = true})
