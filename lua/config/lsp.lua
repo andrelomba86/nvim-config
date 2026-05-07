@@ -45,7 +45,7 @@ mason_lspconfig.setup(
 	}
 )
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, silent = true }
 	local ts_filetypes = {
 		typescript = true,
@@ -53,6 +53,11 @@ local on_attach = function(_, bufnr)
 		javascript = true,
 		javascriptreact = true
 	}
+
+	local ok_ill, ill = pcall(require, "illuminate")
+	if ok_ill then
+		ill.on_attach(client, bufnr)
+	end
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, silent = true, desc = "Ir para definicao" })
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, silent = true, desc = "Listar referencias" })

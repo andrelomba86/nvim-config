@@ -12,6 +12,13 @@ return {
         end
     },
     {
+        "RRethy/vim-illuminate",
+        event = {"BufReadPost", "BufNewFile"},
+        config = function()
+            require("config.illuminate")
+        end
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
